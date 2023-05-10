@@ -1,0 +1,21 @@
+server:
+    port:8083
+    
+   spring:
+    application:
+        name: alumno
+       datasource:
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://localhost:1433;DatabaseName=alumnodb;encrypt=false;trustServerCertificate=false;
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        username: sa
+        password: sasa
+       jpa: 
+        database-platform: org.hibernate.dialect.SQLServer2016Dialect
+        hibernate:
+            ddl-auto: validate
+            naming: 
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandarImpl
+        show-sql: 'true'
+       jackson:
+        
