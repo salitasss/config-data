@@ -1,0 +1,35 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: blacklist
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1432;DatabaseName=blacklist;encrypt=false;trustServerCertificate=false;
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: Admin123456789
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServer2016Dialect
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: 'true'
+  jackson:
+    serialization:
+      fail-on-empty-beans: 'false'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    enabled: true
+
+springdoc:
+  swagger-ui:
+    operationsSorter: method
+    path: /swagger-ui-custom.html
