@@ -22,7 +22,6 @@ spring:
       fail-on-empty-beans: 'false'
 jwt:
   secret: secret
-  header: Authorization
 
 admin-paths:
   paths:
